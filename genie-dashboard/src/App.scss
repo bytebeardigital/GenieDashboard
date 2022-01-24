@@ -2,12 +2,21 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .App {
   text-align: center;
-  height: 100%;
   width: 100%;
+  padding-left: 20%;
+  padding-top: 0 !important;
+  transition: 0.5s;
+  min-height: 100vh;
+  padding-bottom: 160px;
+
+  &--wrapper {
+    padding: 25px;
+  }
 }
 
 .App-logo {

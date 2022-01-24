@@ -1,0 +1,52 @@
+.collectables {
+  &--single {
+    border: 3px solid $special;
+    border-radius: 8px;
+    background-color: $special-400;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+
+    &-container {
+      background-color: $white;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+    .collectable {
+      width: 100%;
+
+      hr {
+        padding: 0px;
+        margin-top: 0px;
+        width: 85%;
+      }
+      &-img {
+        width: 100px;
+        object-fit: cover;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      &-name {
+        @include h5;
+        font-weight: $bold;
+        font-family: $accent-font;
+        margin-bottom: 5px;
+
+        .edition-num {
+          font-weight: $medium;
+          font-style: $italic;
+        }
+      }
+
+      &-info {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

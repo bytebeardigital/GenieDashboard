@@ -1,0 +1,45 @@
+.sidebar {
+  width: 20%;
+  height: 100%;
+  color: #ffffff;
+  left: 0;
+  top: 0;
+  padding: 25px 25px 50px 25px;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: 0.5s;
+  background-color: #fec5bb;
+  color: $white;
+  &--heading {
+    text-align: center;
+
+    .logo {
+      margin-bottom: 10px;
+    }
+    .site-title {
+      @include h4;
+      font-family: $accent-font;
+      text-transform: uppercase;
+      font-weight: $bold;
+      letter-spacing: 1px;
+      line-height: 0.75em;
+
+      .sub-text {
+        font-size: 0.6em;
+        margin-top: 0px;
+        font-weight: $regular;
+        letter-spacing: 8px;
+      }
+    }
+  }
+  &--navigation {
+    .nav-link {
+      color: $white;
+      padding: 15px;
+      @include h5;
+      font-weight: $light;
+    }
+  }
+}

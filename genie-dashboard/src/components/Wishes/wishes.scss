@@ -1,0 +1,57 @@
+.wishes {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--wish {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    border-radius: 12px;
+    background-color: $white;
+    padding: 15px;
+    margin-bottom: 15px;
+
+    .completed {
+      width: 25px;
+    }
+
+    &--input {
+      font-size: 1em;
+      margin-left: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    &--price {
+      margin-left: 25px;
+      font-size: 1em;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+  &__content {
+    flex-direction: column;
+    width: 75%;
+  }
+  &__total {
+    width: 25%;
+    &-wrapper {
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $secondary;
+      border: 3px solid $white;
+    }
+
+    &-total {
+      font-weight: $bold;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+  }
+}

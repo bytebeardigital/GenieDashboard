@@ -1,0 +1,91 @@
+@import './mixins';
+
+//COLORS
+/* SCSS HEX */
+$white: #ffffff;
+$light-accent: #cdeae5;
+$accent: #b4e0d8;
+$primary: #8d7cb5;
+$dark-primary: #7662a6;
+$dark-accent: #41437e;
+$black: #21243f;
+
+/* SCSS HEX */
+$primary: #fec5bb;
+$primary-400: #fcd8d2;
+$primary-200: #f8edeb;
+$secondary: #d3d7f5;
+$secondary-400: #e3eafc;
+$secondary-text: #58487b;
+$accent: #bee1e6;
+$accent-400: #dff7f7;
+$special: #fec99d;
+
+$special-400: #ffe8d1;
+$white: #ffffff;
+
+//FONTS
+$primary-font: 'itc-avant-garde-gothic-pro', sans-serif;
+$body-font: 'basic-sans', sans-serif;
+$accent-font: 'arboria', sans-serif;
+
+//TYPOGRAPHY------------///
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $primary-font;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+
+p {
+  margin-bottom: 0rem;
+  font-family: $body-font;
+}
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+h5,
+.h5 {
+  @include h5;
+}
+
+h6,
+.h6 {
+  @include h6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+//FONTS WEIGHT
+$thin: 200;
+$italic: italic;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
