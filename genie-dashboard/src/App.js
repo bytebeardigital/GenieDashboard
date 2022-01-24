@@ -4,6 +4,8 @@ import './App.scss';
 import SignIn from './pages/SignIn';
 import OverviewBoard from './pages/OverviewBoard';
 import Sidebar from './components/Sidebar';
+import WishesBoard from './pages/WishesBoard';
+import { Routes, Route } from 'react-router-dom';
 
 const dataURL = 'https://my-json-server.typicode.com/bytebeardigital/geniedashboard/db';
 
@@ -29,13 +31,23 @@ function App() {
 
   return (
     <>
-      <Sidebar loginStatus={login} signOut={handleSignOut} />
-      <div className="App">
-        <div className="App--wrapper">
-          <OverviewBoard data={data.dashboard} />
-        </div>
-        {login && <SignIn login={data} handleLogin={handleLogin} />}
-      </div>
+      {login ? (
+        <SignIn login={data} handleLogin={handleLogin} />
+      ) : (
+        <>
+          <Sidebar loginStatus={login} signOut={handleSignOut} />
+          <div className="App">
+            <div className="App--wrapper">
+              <Routes>
+                <Route path="/wishes" element={<WishesBoard />} />
+                {/* <Route path="/budgets" element={<BudgetsBoard />} />
+                <Route path="/goals" element={<GoalsBoard />} /> */}
+                <Route path="/" element={<OverviewBoard data={data.dashboard} />} />
+              </Routes>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

@@ -2,6 +2,8 @@ import React from 'react';
 // import { AiFillHome } from 'react-icons/ai';
 import logo from '../../assets/images/white-logo.png';
 import logoLogout from '../../assets/images/black-logo.png';
+import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import './sidebar.scss';
 
@@ -33,28 +35,34 @@ function Sidebar({ loginStatus, signOut }) {
   return (
     <div className={`sidebar ${!loginStatus ? 'active' : 'disabled'}`}>
       <div className="sidebar--heading row">
-        <a>
+        <Link to="/">
           {SidebarLogo()}
           <p className="site-title">
             ByteBearDigi <span className="sub-text">Dashboard</span>
           </p>
-        </a>
+        </Link>
         <hr />
       </div>
       <div className="sidebar--navigation">
         <ul className="nav flex-column text-center m-4">
-          <a to="/wishes" className="nav-link">
+          <Link to="/wishes" className="nav-link">
             Wishes
-          </a>
-          <a to="/budgets" className="nav-link">
+          </Link>
+          <Link to="/" className="nav-link">
             Budgets
-          </a>
-          <a to="/goals" className="nav-link">
-            Goals
-          </a>
+          </Link>
           <a onClick={handleSignOut} className="nav-link sidebar--nav">
             SignOut
           </a>
+          {/* <Link to="/" className="nav-link">
+            Budgets
+          </Link>
+          <Link to="/" className="nav-link">
+            Goals
+          </Link>
+          <Link onClick={handleSignOut} className="nav-link sidebar--nav">
+            SignOut
+          </Link> */}
         </ul>
       </div>
     </div>
