@@ -1,10 +1,11 @@
 {
-  "users": [
+  "user": [
     {
       "email": "user@email.com",
       "password": "password123",
       "username": "bytebeardigi",
       "id": 1
     }
-  ]
+  ],
+  "wishes": [{ "id": 1, " wish_name": "Samoyed", "wish_price": 2200 }]
 }
