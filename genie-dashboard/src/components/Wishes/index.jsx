@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './wishes.scss';
 
-function Wishes(props) {
-  let wishes = props.wishes;
+function Wishes({ wishes }) {
+  let wishData = wishes;
 
+  console.log(wishData);
   function renderWishes() {
-    let wish = wishes.map((wish) => {
+    wishData.map((wish) => {
       console.log(wish);
       return (
         <div key={wish.id} className="wishes--wish">
           <input type="checkbox" className="completed" />
-          <p className="wishes--wish--input">{wish.wish_name}</p>
-          <p className="wishes--wish--price">{wish.wish_price}</p>
+          <p className="wishes--wish--input">name</p>
+          <p className="wishes--wish--price">200.00</p>
         </div>
       );
     });
-    return wish;
   }
 
   if (!wishes) {

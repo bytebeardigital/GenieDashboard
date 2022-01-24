@@ -10,7 +10,16 @@
   "dashboard": [
     {
       "wishes": [
-        { "id": "68efe3f8-f6e2-403-b4e8-458545c837da", "wish_name": "Samoyed", "wish_price": 2200 }
+        {
+          "id": "68efe3f8-f6e2-403-b4e8-458545c837da",
+          "wish_name": "Samoyed",
+          "wish_price": 2200
+        },
+        {
+          "id": "e9a930b5-7fc4-43d1-8fb1-8359b31a26b5",
+          "wish_name": "New Apt",
+          "wish_price": 42000.5
+        }
       ]
     },
     {

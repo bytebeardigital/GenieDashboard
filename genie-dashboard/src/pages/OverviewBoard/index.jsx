@@ -6,24 +6,48 @@ import PropTypes from 'prop-types';
 import Goals from '../../components/Goals';
 function OverviewBoard({ data }) {
   if (!data) return null;
-  let wishes = data.wishes;
-  console.log(wishes);
+  let userData = data;
+
+  let wishData = userData.filter((wish) => {
+    if (wish.wishes) {
+      return wish.wishes;
+    } else null;
+  });
+
+  let collectionData = userData.filter((data) => {
+    if (data.collectables) {
+      return (data.collectables = 'collectables');
+    } else null;
+  });
+
+  let goalsData = userData.filter((data) => {
+    if (data.goals) {
+      return (data.goals = 'goals');
+    } else null;
+  });
+
+  let financeData = userData.filter((data) => {
+    if (data.finances) {
+      return (data.finances = 'finances');
+    } else null;
+  });
+
   return (
     <div className="adminBoard">
       <div className="container-fluid wishesBoard--list mb-4">
         <div className="row justify-content-center">
-          <Wishes wishes={wishes} />
+          <Wishes wishes={wishData} />
         </div>
       </div>
       <div className="budgetBoard">
-        <Budgets />
+        <Budgets data={financeData} />
       </div>
       <div className="row justify-content-center">
         <div className="col-4">
-          <Collectables />
+          <Collectables data={collectionData} />
         </div>
         <div className="col-8">
-          <Goals />
+          <Goals data={goalsData} />
         </div>
       </div>
     </div>

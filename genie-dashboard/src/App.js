@@ -25,12 +25,14 @@ function App() {
     });
   }, []);
 
+  if (!data) return null;
+
   return (
     <>
       <Sidebar loginStatus={login} signOut={handleSignOut} />
       <div className="App">
         <div className="App--wrapper">
-          <OverviewBoard data={data} />
+          <OverviewBoard data={data.dashboard} />
         </div>
         {login && <SignIn login={data} handleLogin={handleLogin} />}
       </div>
