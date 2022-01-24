@@ -5,7 +5,7 @@ import SignIn from './pages/SignIn';
 import OverviewBoard from './pages/OverviewBoard';
 import Sidebar from './components/Sidebar';
 
-const dataURL = 'http://localhost:3000/';
+const dataURL = 'https://my-json-server.typicode.com/bytebeardigital/geniedashboard/db';
 
 function App() {
   const [login, setLogin] = useState(true);
