@@ -10,8 +10,13 @@
   overflow: hidden;
   overflow-y: auto;
   transition: 0.5s;
-  background-color: #fec5bb;
-  color: $white;
+  &.active {
+    background-color: $primary;
+  }
+  &.disabled {
+    background-color: rgba($grey, 0.4);
+    color: $black;
+  }
   &--heading {
     text-align: center;
 
@@ -31,6 +36,14 @@
         margin-top: 0px;
         font-weight: $regular;
         letter-spacing: 8px;
+      }
+    }
+
+    .greeting {
+      border: 1px solid blue;
+      .greet {
+        @include h5;
+        font-style: italic;
       }
     }
   }

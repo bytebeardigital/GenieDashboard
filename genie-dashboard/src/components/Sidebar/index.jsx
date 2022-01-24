@@ -1,17 +1,40 @@
 import React from 'react';
 // import { AiFillHome } from 'react-icons/ai';
 import logo from '../../assets/images/white-logo.png';
+import logoLogout from '../../assets/images/black-logo.png';
+import PropTypes from 'prop-types';
+import './sidebar.scss';
+
 //a to navigate to other site aths
 import './sidebar.scss';
 
-function Sidebar() {
+function Sidebar({ loginStatus, signOut }) {
   //Siebar Colors are a styled component
 
+  function handleSignOut() {
+    signOut();
+  }
+
+  function SidebarLogo() {
+    if (!loginStatus) {
+      return (
+        <>
+          <img src={logo} alt="ByteBearDigi Logo" className="logo" />
+        </>
+      );
+    } else {
+      return (
+        <>
+          <img src={logoLogout} alt="ByteBearDigi Logo" className="logo" />
+        </>
+      );
+    }
+  }
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${!loginStatus ? 'active' : 'disabled'}`}>
       <div className="sidebar--heading row">
         <a>
-          <img src={logo} alt="ByteBearDigi Logo" className="logo" />
+          {SidebarLogo()}
           <p className="site-title">
             ByteBearDigi <span className="sub-text">Dashboard</span>
           </p>
@@ -20,22 +43,26 @@ function Sidebar() {
       </div>
       <div className="sidebar--navigation">
         <ul className="nav flex-column text-center m-4">
-          <a to="/sign-in" className="nav-a sidebar--nav">
-            SignOut
-          </a>
-          <a to="/wishes" className="nav-a">
+          <a to="/wishes" className="nav-link">
             Wishes
           </a>
-          <a to="/budgets" className="nav-a">
+          <a to="/budgets" className="nav-link">
             Budgets
           </a>
-          <a to="/goals" className="nav-a">
+          <a to="/goals" className="nav-link">
             Goals
+          </a>
+          <a onClick={handleSignOut} className="nav-link sidebar--nav">
+            SignOut
           </a>
         </ul>
       </div>
     </div>
   );
 }
+Sidebar.propTypes = {
+  loginStatus: PropTypes.bool,
+  signOut: PropTypes.func
+};
 
 export default Sidebar;

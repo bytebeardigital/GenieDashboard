@@ -20,7 +20,7 @@ $secondary-text: #58487b;
 $accent: #bee1e6;
 $accent-400: #dff7f7;
 $special: #fec99d;
-
+$grey: #6c757d;
 $special-400: #ffe8d1;
 $white: #ffffff;
 
@@ -28,54 +28,6 @@ $white: #ffffff;
 $primary-font: 'itc-avant-garde-gothic-pro', sans-serif;
 $body-font: 'basic-sans', sans-serif;
 $accent-font: 'arboria', sans-serif;
-
-//TYPOGRAPHY------------///
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $primary-font;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1.3;
-  margin: 0 0 1rem;
-}
-
-p {
-  margin-bottom: 0rem;
-  font-family: $body-font;
-}
-h1,
-.h1 {
-  @include h1;
-}
-
-h2,
-.h2 {
-  @include h2;
-}
-
-h3,
-.h3 {
-  @include h3;
-}
-
-h4,
-.h4 {
-  @include h4;
-}
-
-h5,
-.h5 {
-  @include h5;
-}
-
-h6,
-.h6 {
-  @include h6;
-}
 
 a {
   text-decoration: none;

@@ -7,6 +7,7 @@ function Wishes(props) {
 
   function renderWishes() {
     let wish = wishes.map((wish) => {
+      console.log(wish);
       return (
         <div key={wish.id} className="wishes--wish">
           <input type="checkbox" className="completed" />

@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.scss';
 import SignIn from './pages/SignIn';
-import OverviewBoar from './pages/OverviewBoard';
+import OverviewBoard from './pages/OverviewBoard';
 import Sidebar from './components/Sidebar';
 
-const dataURL = 'http://localhost:3000/';
+const dataURL = 'https://my-json-server.typicode.com/bytebeardigital/geniedashboard/db';
 
 function App() {
   const [login, setLogin] = useState(true);
   const [data, setData] = useState(null);
 
-  console.log(login);
-  console.log(setLogin);
-
   function handleLogin() {
-    alert('login');
+    setLogin(false);
+  }
+  function handleSignOut() {
+    setLogin(!login);
   }
 
   //Get Data
@@ -23,19 +23,16 @@ function App() {
     axios.get(dataURL).then((resp) => {
       setData(resp.data);
     });
-  });
-
-  //Check for Data
-  console.log(data);
+  }, []);
 
   return (
     <>
-      <Sidebar />
+      <Sidebar loginStatus={login} signOut={handleSignOut} />
       <div className="App">
         <div className="App--wrapper">
-          <OverviewBoar />
+          <OverviewBoard data={data} />
         </div>
-        {login && <SignIn login={login} handleLogin={handleLogin} />}
+        {login && <SignIn login={data} handleLogin={handleLogin} />}
       </div>
     </>
   );
