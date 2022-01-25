@@ -1,4 +1,5 @@
 import React from 'react';
+import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 import './wishes.scss';
 
@@ -19,7 +20,13 @@ function Wishes({ wishes }) {
                 <div key={singleWish.id} className="wishes--wish">
                   <input type="checkbox" className="completed" />
                   <p className="wishes--wish--input">{singleWish.wish_name}</p>
-                  <p className="wishes--wish--price">{singleWish.wish_price}</p>
+                  <NumberFormat
+                    value={singleWish.wish_price}
+                    className="wishes--wish--price"
+                    displayType="text"
+                    thousandSeparator={true}
+                    prefix="$"
+                  />
                 </div>
               ))
             )}
