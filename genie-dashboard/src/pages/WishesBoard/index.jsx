@@ -2,10 +2,12 @@ import React from 'react';
 import Wishes from '../../components/Wishes';
 import PropTypes from 'prop-types';
 import './wishesboard.scss';
+import WishForm from '../../components/WishForm';
 
 function WishesBoard(props) {
-  const wishes = props.wishData;
+  const wishes = props.data;
 
+  console.log(wishes);
   return (
     <div
       className="main_content_inners wishesBoard"
@@ -17,7 +19,10 @@ function WishesBoard(props) {
       </div>
       <div className="row">
         <div className="col-6">
-          <div className="wishesBoard--form">form</div>
+          <div className="wishesBoard--form">
+            <h3>Wish Form</h3>
+            <WishForm />
+          </div>
         </div>
         <div className="col-6">
           <div className="wishesBoard--form">Favorite Wish</div>
@@ -28,6 +33,6 @@ function WishesBoard(props) {
 }
 
 WishesBoard.propTypes = {
-  wishData: PropTypes.array
+  data: PropTypes.array
 };
 export default WishesBoard;

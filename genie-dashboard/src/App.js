@@ -29,6 +29,13 @@ function App() {
 
   if (!data) return null;
 
+  let dashData = data.dashboard;
+  let wishData = dashData.filter((wish) => {
+    if (wish.wishes) {
+      return wish.wishes;
+    } else null;
+  });
+
   return (
     <>
       {login ? (
@@ -39,7 +46,7 @@ function App() {
           <div className="App">
             <div className="App--wrapper">
               <Routes>
-                <Route path="/wishes" element={<WishesBoard />} />
+                <Route path="/wishes" element={<WishesBoard data={wishData} />} />
                 {/* <Route path="/budgets" element={<BudgetsBoard />} />
                 <Route path="/goals" element={<GoalsBoard />} /> */}
                 <Route path="/" element={<OverviewBoard data={data.dashboard} />} />

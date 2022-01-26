@@ -31,6 +31,7 @@ function OverviewBoard({ data }) {
       return (data.finances = 'finances');
     } else null;
   });
+  console.log(wishData);
 
   return (
     <div className="adminBoard">
