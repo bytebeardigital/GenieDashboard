@@ -1,3 +1,4 @@
+//HELPERS
 .accent {
   font-family: $accent-font;
 }
@@ -6,4 +7,14 @@
   margin-bottom: 12px !important;
   text-align: left !important;
 }
-//HELPERS
+
+.button {
+  width: 80%;
+  background-color: $primary;
+  border: 2px solid $primary;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: $bold;
+  font-size: 1.15em;
+  margin-top: 10px;
+}

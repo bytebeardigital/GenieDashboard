@@ -19,6 +19,10 @@ function Wishes({ wishes }) {
     console.log('delete wish');
   }
 
+  function completeWish() {
+    console.log('wish completed');
+  }
+
   if (!wishes) {
     return <h1>Uh Oh!</h1>;
   } else;

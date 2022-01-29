@@ -1,16 +1,36 @@
 import React, { useState } from 'react';
+import './wishForm.scss';
 
 function WishForm() {
-  const [wish, setWish] = useState('');
+  const [wish] = useState({
+    wish: '',
+    price: null
+  });
+
+  const sendWish = ({ wish }) => {
+    const newWishes = { ...wish, wish_name: wish.wish, wish_price: wish.price };
+    console.log(newWishes);
+  };
 
   console.log(wish);
-  console.log(setWish);
   return (
-    <form>
-      <input className="form-control mb-3" type="text" value={wish} placeholder="Add Todo..." />
-      <input className="form-control mb-3" type="text" value={wish} placeholder="Add Price..." />
+    <form className="wishform">
+      <input
+        className="form-control mb-3"
+        type="text"
+        value={wish.wish}
+        placeholder="Enter Wish..."
+      />
+      <input
+        className="form-control mb-3"
+        type="text"
+        value={wish.price}
+        placeholder="Enter Price..."
+      />
 
-      <button className="btn btn-primary">Submit</button>
+      <button type="button" className="btn btn-primary button" onClick={sendWish}>
+        Submit
+      </button>
     </form>
   );
 }

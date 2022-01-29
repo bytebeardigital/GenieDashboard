@@ -10,7 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 const dataURL = 'https://my-json-server.typicode.com/bytebeardigital/geniedashboard/db';
 
 function App() {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [data, setData] = useState(null);
 
   function handleLogin() {

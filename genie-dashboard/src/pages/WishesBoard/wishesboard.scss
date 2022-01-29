@@ -4,7 +4,9 @@
     border: 3px solid $secondary;
     border-radius: 8px;
     background-color: $secondary-400;
-    padding: 20px;
+  }
+  &--form {
+    padding: 12px;
   }
   .wishes--total {
     display: flex;
